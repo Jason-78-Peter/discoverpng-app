@@ -179,8 +179,7 @@ Screenshots already exist for Welcome, Login, Register, Explore and Profile from
 
 Written honestly, as required:
 
-- **No GitHub repository has been set up yet.** The brief requires the final commit on `main` to be tagged `v1.0` and run from a clean clone — this is outstanding and is the single biggest remaining risk against Section 7 of the brief.
-- **No EAS build has been produced yet.** The app has only been run through Expo Go on a physical device, not as a compiled, installed APK/AAB. See [Build instructions](#build-instructions-apk--aab).
+
 - The protected-route guard (redirecting a signed-out user away from the main app) is hard to trigger through normal use, because logging out already redirects before the guard would ever need to fire. It was verified by code review and by confirming no regression to the normal login/logout flow, rather than by a reproducible manual click-path that forces a signed-out user directly into a protected screen.
 - On login, there's a brief visible flash of the Welcome screen before the app settles on the Explore tab for an already-signed-in user. Cosmetic only — it doesn't affect functionality — and was left as-is given time constraints.
 - Location and place photos are a single admin-curated image per place (uploaded once via the Supabase dashboard), not a multi-photo gallery or user-submitted location photos.
