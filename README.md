@@ -168,19 +168,13 @@ The resulting APK was installed on a physical Android device and confirmed worki
 
 ## Screenshot gallery
 
-> Add screenshots for each screen here before submitting. Save them into a `/screenshots` folder at the project root and reference them like this:
-
-```markdown
 | Welcome | Login | Register |
 |---|---|---|
-| ![Welcome](./screenshots/welcome.png) | ![Login](./screenshots/login.png) | ![Register](./screenshots/register.png) |
+| ![Welcome](./welcome.jpg) | ![Login](./login.jpg) | ![Register](./register.jpg) |
 
 | Explore | Location Detail | Add/Edit Review | Profile |
 |---|---|---|---|
-| ![Explore](./screenshots/explore.png) | ![Location Detail](./screenshots/location-detail.png) | ![Add Review](./screenshots/add-review.png) | ![Profile](./screenshots/profile.png) |
-```
-
-Screenshots already exist for Welcome, Login, Register, Explore and Profile from earlier testing — they just need saving into `/screenshots` with those file names. Location Detail and Add/Edit Review still need a fresh screenshot each.
+| ![Explore](./explore.jpg) | ![Location Detail](./location-detail.jpg) | ![Add Review](./add-review.jpg) | ![Profile](./profile.jpg) |
 
 ## Known limitations
 
