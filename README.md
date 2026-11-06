@@ -54,7 +54,7 @@ These steps work from a clean clone.
 1. **Clone the repository**
    ```
    git clone [repository URL]
-   cd discoverpng
+   cd discoverpng-app
    ```
 2. **Install dependencies**
    ```
@@ -145,19 +145,26 @@ Finally, seed a few rows into `places` with real `latitude`/`longitude` values �
 
 ## Build instructions (APK / AAB)
 
-> **Status: not yet produced.** This section will be completed once EAS Build has been run.
+The app was compiled into a real, installable Android APK using EAS Build — not just run through Expo Go.
 
-Planned process, using EAS (`eas-cli`):
+**Build used:** `eas build --platform android --profile preview`
+**Build record:** https://expo.dev/accounts/jasonpetermiria21/projects/discoverpng/builds/47b60753-0370-496b-805a-a59589192226
 
+Before the build would work, two Supabase environment variables (`EXPO_PUBLIC_SUPABASE_URL`, `EXPO_PUBLIC_SUPABASE_ANON_KEY`) had to be registered directly with EAS for the `preview` environment, since a local `.env` file is never visible to EAS's cloud build servers — without this, the build would succeed but produce an app with no working backend connection.
+
+To reproduce the build from a clean clone:
 ```
 npm install -g eas-cli
 eas login
 eas build:configure
-eas build --platform android --profile preview      # produces the signed APK
-eas build --platform android --profile production   # produces the signed AAB
+eas env:set --name EXPO_PUBLIC_SUPABASE_URL --value "<your-supabase-url>" --environment preview --visibility plaintext
+eas env:set --name EXPO_PUBLIC_SUPABASE_ANON_KEY --value "<your-supabase-anon-key>" --environment preview --visibility plaintext
+eas build --platform android --profile preview
 ```
 
-Once builds succeed, this section will be updated with the build IDs for both artefacts and a note of any configuration changes (e.g. in `eas.json` or `app.json`) that were needed to get the compiled build working, as distinct from running in Expo Go.
+A `production` (AAB) build was deliberately not produced for this submission — the brief's build requirement is satisfied by the compiled, installed APK above, and the AAB format is only relevant for a Play Store submission, which is out of scope here.
+
+The resulting APK was installed on a physical Android device and confirmed working end-to-end: login, Explore with real data and photos, weather, and full review create/edit/delete with photo upload.
 
 ## Screenshot gallery
 
